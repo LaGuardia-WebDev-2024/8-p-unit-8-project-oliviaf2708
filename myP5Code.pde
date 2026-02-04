@@ -1,18 +1,45 @@
 //🟢setup Function - will run once
 setup = function() {
     size(600, 400);
-    background(255,255,255,0);
-    
-    drawFish(220, 385); 
-    drawFish(300, 381);
-    drawFish2(400, 390)
-    drawFish3(150, 380)
-    drawDolphin(350, 350)
-    drawBird(148, 100)
+  
 };
+
+var bluefishmove = 0;
+var nemomove = 0;
+var brownfishmove = 0;
+whitebirdmove = 0;
+dolphinmove = 0;
+
 
 //🟢draw Function - will run on repeat
 draw = function(){
+  background(255,255,255,0);
+    
+    drawFish(220 + nemomove, 385); 
+    drawFish(300 + nemomove, 381);
+    drawFish2(400 + bluefishmove, 390)
+    drawFish3(150 + brownfishmove, 380)
+    drawDolphin(350, 350 + dolphinmove)
+    drawBird(148, 100)
+    drawBird2(350 + whitebirdmove, 200)
+
+bluefishmove --
+nemomove --
+brownfishmove --
+whitebirdmove --
+dolphinmove --;
+
+if(nemomove < -300){
+  nemomove = 480
+}
+
+if(bluefishmove < -320){
+  bluefishmove = 480
+}
+
+if(brownfishmove < -320){
+  brownfishmove = 350
+}
 
 };
 
@@ -55,7 +82,7 @@ var drawBird = function(BirdX, BirdY, BirdColor){
 var drawBird2 = function(Bird2X, Bird2Y, BirdColor){
   textSize(33);
   fill(BirdColor);
-  text("", Bird2X, Bird2Y);
+  text("🕊️", Bird2X, Bird2Y);
 };
 
 
