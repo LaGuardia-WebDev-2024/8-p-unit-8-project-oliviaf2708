@@ -31,7 +31,8 @@ whitebirdmove --
 dolphinmove += dolphindirection;
 
 
-// Animal move 
+// Animal movement  
+
 if(nemomove < -300){
   nemomove = 480
 }
@@ -56,8 +57,23 @@ if(dolphinmove > 10){
   dolphindirection = -1
 }
 
-// Parrot food 
+// When the parrot eats the fish  
 
+if(mousePressed){
+  if(mouseY > 350){
+  textSize(20)
+  fill(255, 242, 84)
+  text("I don't like getting wet", 270, 350)
+}
+
+if(mouseY < 50){
+  textSize(20)
+  fill(252, 239, 88)
+  text("Thats too high!", 50, 120)
+  
+}
+
+}
 
 };
 
